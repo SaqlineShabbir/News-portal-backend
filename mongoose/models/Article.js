@@ -5,23 +5,23 @@ const ArticleSchema = mongoose.Schema(
     {
         title: {
             type: String,
-            required: [true, 'please provide a name'],
-            minLength: [1, 'minimum length 1 word'],
+            required: [true, 'title required'],
+            minLength: [8, 'minimum length 8 word'],
             maxLength: [100, 'maximum length 100 word'],
             trim: true,
             unique: true,
           },
           description: {
             type: String,
-            required: [true, 'please provide description'],
+            required: [true, 'description required'],
             trim: true,
           },
-          photo: {
+          avatar: {
             type: String,
-            required: [true, 'please provide photo'],
+            required: true,
           },
     },
-    { timeStamp: new Date() }
+    { timeStamps: new Date() }
 )
 
 //model
